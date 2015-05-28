@@ -1,0 +1,13 @@
+:nodes:
+  - :type: websocket
+    :id: 1
+    :host: localhost
+    :port: 9006
+  - :type: midi
+    :direction: input
+    :id: 2
+    :name: choose
+  - :type: midi
+    :direction: output
+    :id: 3
+    :name: choose
