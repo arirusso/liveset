@@ -1,2 +1,2 @@
 #!/bin/sh
-rackup ../../vz/config.ru
+rackup ../vz/config.ru
