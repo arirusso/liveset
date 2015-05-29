@@ -4,7 +4,7 @@ module Liveset
 
     def initialize(settings, &block)
       @settings = settings
-      @player = MMPlayer.new(@settings[:midi][:input], :mplayer_flags => mplayer_flags)
+      populate_player
       instance_eval(&block)
     end
 
@@ -26,7 +26,16 @@ module Liveset
 
     private
 
-    def mplayer_flags
+    def get_midi_input
+      input = UniMIDI::Input.gets if @settings[:midi][:input] == "choose"
+      input ||= @settings[:midi][:input]
+    end
+
+    def populate_player
+      @player = MMPlayer.new(get_midi_input, :mplayer_flags => get_mplayer_flags)
+    end
+
+    def get_mplayer_flags
       flags = "-noborder -framedrop -zoom -osdlevel 0 -vo corevideo:device_id=#{@settings[:video][:display]} -nosound"
       flags += " -fs" if @settings[:video][:is_fullscreen]
       flags

@@ -2,18 +2,9 @@
 $:.unshift(File.join("lib"))
 
 require "liveset"
+require "yaml"
 
-@settings = {
-  :video => {
-    :directory => "media/video/vids/nosound/hifi",
-    :display => 0,
-    :is_fullscreen => false
-  },
-  :midi => {
-    :channel => 15,
-    :input => UniMIDI::Input.gets
-  }
-}
+@settings = YAML.load_file("config/vidplayer/settings.yml").freeze
 
 @player = Liveset::VideoPlayer.new(@settings) do
 

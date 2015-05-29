@@ -1,0 +1,7 @@
+:midi:
+  :channel: 15
+  :input: choose
+:video:
+  :directory: media/video/vids/nosound/hifi
+  :display: 0
+  :is_fullscreen: false
