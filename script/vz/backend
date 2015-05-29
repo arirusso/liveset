@@ -1,2 +1,2 @@
 #!/bin/sh
-patchrb config/nodes.yml config/patches.yml
+patchrb config/vz/nodes.yml config/vz/patches.yml
