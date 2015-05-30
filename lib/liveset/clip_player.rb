@@ -6,9 +6,9 @@ module Liveset
 
     def_delegators :@player, :settings, :start
 
-    def initialize(settings_file, clips_file, &block)
-      @clips = YAML.load_file(clips_file).freeze
-      @player = VideoPlayer.new(settings_file)
+    def initialize(configuration, &block)
+      @clips = configuration.vidplayer[:clips]
+      @player = VideoPlayer.new(configuration)
       configure
     end
 

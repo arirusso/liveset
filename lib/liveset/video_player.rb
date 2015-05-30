@@ -4,8 +4,8 @@ module Liveset
 
     attr_reader :settings
 
-    def initialize(settings_file, &block)
-      @settings = YAML.load_file(settings_file).freeze
+    def initialize(configuration, &block)
+      @settings = configuration.vidplayer[:settings]
       populate_player
       instance_eval(&block) if block_given?
     end
