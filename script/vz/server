@@ -1,2 +1,11 @@
-#!/bin/sh
-../vz/bin/vzserver
+#!/usr/bin/env ruby
+$:.unshift(File.join("lib"))
+$:.unshift(File.join("..", "vz", "lib"))
+
+require "yaml"
+require "liveset"
+require "vz/server"
+
+@config = Liveset::Configuration.new
+
+VZ::Server.start(:port => @config.vz[:server][:port])

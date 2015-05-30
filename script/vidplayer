@@ -3,8 +3,7 @@ $:.unshift(File.join("lib"))
 
 require "liveset"
 
-CONFIG_DIR = "config/vidplayer"
-
-@player = Liveset::ClipPlayer.new("#{CONFIG_DIR}/settings.yml", "#{CONFIG_DIR}/clips.yml")
+@config = Liveset::Configuration.new
+@player = Liveset::ClipPlayer.new(@config)
 
 @player.start #(:background => true)
