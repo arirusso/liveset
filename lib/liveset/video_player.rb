@@ -2,8 +2,9 @@ module Liveset
 
   class VideoPlayer
 
-    def initialize(settings, &block)
-      @settings = settings
+    def initialize(settings_file, clips_file, &block)
+      @settings = YAML.load_file(settings_file).freeze
+      @clips = YAML.load_file(clips_file).freeze
       populate_player
       instance_eval(&block)
     end

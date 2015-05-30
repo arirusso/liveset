@@ -4,18 +4,13 @@ $:.unshift(File.join("lib"))
 require "liveset"
 require "yaml"
 
-@settings = YAML.load_file("config/vidplayer/settings.yml").freeze
-
-@player = Liveset::VideoPlayer.new(@settings) do
+@player = Liveset::VideoPlayer.new("config/vidplayer/settings.yml", "config/vidplayer/clips.yml") do
 
   rx_channel @settings[:midi][:channel]
 
-  #note("C3") { play() }
-  note("C#3") { play(video("pressure.mov")) }
-  note("D3") { play(video("spider.mov")) }
-  note("D#3") { play(video("skeleton.mov")) }
-  note("E3") { play(video("loop.mov")) }
-  note("F3") { play(video("bigbaby.mov")) }
+  @clips.each do |clip|
+    note(clip[:note]) { play(video(clip[:file])) }
+  end
 
   cc(1) do |value|
    percent = to_percent(value)
