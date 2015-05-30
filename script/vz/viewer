@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 $:.unshift(File.join("lib"))
 
-flags = "-nosession -newwin http://localhost:9292"
+require "liveset"
+
+@config = Liveset::Configuration.new
+
+flags = "-nosession -newwin http://localhost:#{@config.vz[:server][:port]}"
 
 `/Applications/Opera.app/Contents/MacOS/Opera #{flags} > log/opera.log 2>&1`
