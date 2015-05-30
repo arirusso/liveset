@@ -15,12 +15,19 @@ module Liveset
     private
 
     def configure
-      rx_channel(settings[:midi][:channel])
+      receive_channel(settings[:midi][:channel])
 
+      configure_clips
+      configure_speed_control
+    end
+
+    def configure_clips
       @clips.each do |clip|
         note(clip[:note]) { play(video(clip[:file])) }
       end
+    end
 
+    def configure_speed_control
       cc(1) do |value|
         percent = to_percent(value)
         setting = [(percent / 100.0) * 2, 0.1].max
