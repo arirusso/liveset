@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+$:.unshift(File.join("lib"))
+
+require "liveset"
+require "yaml"
+
+CONFIG_DIR = "config/vidplayer"
+
+@player = Liveset::ClipPlayer.new("#{CONFIG_DIR}/settings.yml", "#{CONFIG_DIR}/clips.yml")
+
+@player.start #(:background => true)

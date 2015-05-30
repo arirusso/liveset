@@ -2,16 +2,23 @@ module Liveset
 
   class VideoPlayer
 
-    def initialize(settings_file, clips_file, &block)
+    attr_reader :settings
+
+    def initialize(settings_file, &block)
       @settings = YAML.load_file(settings_file).freeze
-      @clips = YAML.load_file(clips_file).freeze
       populate_player
-      instance_eval(&block)
+      instance_eval(&block) if block_given?
+    end
+
+    def start
+      @player.start
     end
 
     def video(file)
       "#{@settings[:video][:directory]}/#{file}"
     end
+
+    private
 
     def method_missing(method, *args, &block)
       if @player.respond_to?(method)
@@ -21,11 +28,9 @@ module Liveset
       end
     end
 
-    def respond_to_missing?(method)
+    def respond_to_missing?(method, include_private = false)
       @player.respond_to?(method) || super
     end
-
-    private
 
     def get_midi_input
       input = UniMIDI::Input.gets if @settings[:midi][:input] == "choose"
