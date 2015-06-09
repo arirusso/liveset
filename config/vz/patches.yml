@@ -116,6 +116,24 @@
           :channel: 0
           :index: 8
 
+      - :name: Saturation
+        :key: saturation
+        :default:
+          :scale: !ruby/range 1.0..10
+          :value: 1
+        :midi:
+          :channel: 0
+          :index: 12
+
+      - :name: Key Color
+        :key: keyColor
+        :default:
+          :scale: !ruby/range 0..16777215
+          :value: 1
+        :midi:
+          :channel: 0
+          :index: 13
+
       - :name: Reset Rotation
         :key: resetRotation
         :osc:
@@ -147,15 +165,6 @@
         :midi:
           :channel: 0
           :index: 11
-
-      - :name: Saturation
-        :key: saturation
-        :default:
-          :scale: !ruby/range 1.0..10
-          :value: 1
-        :midi:
-          :channel: 0
-          :index: 12
 
       - :name: Hue Rotation
         :key: hueRotation
