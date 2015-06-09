@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -avzhe ssh --progress media/video/vids/nosound tooth15:/Users/russo/video/
