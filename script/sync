@@ -1,3 +1,2 @@
 #!/bin/sh
-rsync -avzhe ssh --progress media/video/nosound tooth15:/Users/russo/video/
-rsync -avzhe ssh --progress media/video/other tooth15:/Users/russo/video/
+rsync -avzhe ssh --progress media/video/nosound tooth15:/Users/russo/liveset_media/video
