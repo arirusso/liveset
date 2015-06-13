@@ -134,6 +134,12 @@
           :channel: 0
           :index: 13
 
+      - :name: Toggle Keyer
+        :key: toggleKeyer
+        :midi:
+          :channel: 0
+          :index: 14
+
       - :name: Reset Rotation
         :key: resetRotation
         :osc:
