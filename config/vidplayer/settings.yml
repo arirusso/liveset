@@ -1,6 +1,6 @@
 :midi:
   :channel: 15
-  :input: choose
+  :input: choose 2
 :video:
   :directory: assets/video/nosound/hifi
   :display: 0
