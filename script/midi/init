@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+$:.unshift(File.join("..", "lib"))
+
+require "micromidi"
+
+@output = UniMIDI::Output.gets
+
+MIDI.using(@input) do
+
+  # Initialize the Pittsburgh MIDI 2
+  
+  channel 0
+  note "C1"
+
+  channel 1
+  note "C2"
+
+end
