@@ -32,13 +32,16 @@ module Liveset
       @player.respond_to?(method) || super
     end
 
-    def get_midi_input
-      input = UniMIDI::Input.gets if @settings[:midi][:input] == "choose"
-      input ||= @settings[:midi][:input]
+    def get_midi_inputs
+      if match = @settings[:midi][:input].match(/\Achoose(\ (\d+))?\z/)
+        num_inputs = match[2] || 1
+        inputs = (0..num_inputs.to_i - 1).to_a.map { UniMIDI::Input.gets }
+        inputs ||= @settings[:midi][:input]
+      end
     end
 
     def populate_player
-      @player = MMPlayer.new(get_midi_input, :mplayer_flags => get_mplayer_flags)
+      @player = MMPlayer.new(get_midi_inputs, :mplayer_flags => get_mplayer_flags)
     end
 
     def get_mplayer_flags
