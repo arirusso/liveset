@@ -1,0 +1,2 @@
+tmux new -d -s my-session 'teamocil --layout config/tmux/left.yml'\; \
+ attach \;
