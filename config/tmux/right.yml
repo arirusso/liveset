@@ -6,7 +6,6 @@ windows:
       - script/midi/init
       - script/vz/server
       - script/vz/hub
-      - script/vz/viewer
       - commands:
          - echo hi
         focus: true
