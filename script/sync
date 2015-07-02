@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -avzhe ssh --progress assets tooth15:/Users/russo/liveset_assets
+rsync -avzhe ssh --progress assets/* tooth15:/Users/russo/liveset_assets
