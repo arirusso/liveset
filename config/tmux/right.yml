@@ -1,0 +1,12 @@
+windows:
+  - name: startup_right
+    root: ~/workspace/liveset
+    layout: tiled
+    panes:
+      - script/midi/init
+      - script/vz/server
+      - script/vz/hub
+      - script/vz/viewer
+      - commands:
+         - echo hi
+        focus: true
