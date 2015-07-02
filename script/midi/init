@@ -5,14 +5,14 @@ require "micromidi"
 
 @output = UniMIDI::Output.gets
 
-MIDI.using(@input) do
+MIDI.using(@output) do
 
   # Initialize the Pittsburgh MIDI 2
-  
+
   channel 0
-  note "C1"
+  play "C1", 0.5
 
   channel 1
-  note "C2"
+  play "C2", 0.5
 
 end
