@@ -7,5 +7,6 @@ windows:
       - script/vz/server
       - script/vz/hub
       - commands:
+         - /Applications/Ableton\ Live\ 9\ Suite.app/Contents/MacOS/Live
          - echo hi
         focus: true
