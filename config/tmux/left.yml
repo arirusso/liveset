@@ -5,6 +5,6 @@ windows:
     panes:
       - script/vidplayer
       - commands:
-         - /Applications/Ableton\ Live\ 9\ Suite.app/Contents/MacOS/Live
+         - /Applications/Ableton\ Live\ 9\ Suite.app/Contents/MacOS/Live assets/ableton/quick/setup_left.als
          - echo hi
         focus: true
