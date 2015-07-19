@@ -23,7 +23,10 @@ module Liveset
 
     def configure_clips
       @clips.each do |clip|
-        note(clip[:note]) { play(video(clip[:file])) }
+        note(clip[:note]) do
+          puts "Note #{clip[:note]} received, playing #{clip[:file]}"
+          play(video(clip[:file]))
+        end
       end
     end
 
