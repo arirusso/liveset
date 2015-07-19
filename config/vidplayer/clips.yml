@@ -1,22 +1,39 @@
 - :note: C0
-  :file: pressure.mov
-- :note: D0
   :file: spider.mov
-- :note: E0
+- :note: D0
   :file: skeleton.mov
-- :note: F0
+- :note: E0
   :file: loop.mov
-- :note: G0
+- :note: F0
   :file: bigbaby.mov
-- :note: A0
-  :file: wasted.mov
-- :note: C1
+- :note: G0
   :file: swipe.mov
-- :note: D1
-  :file: zishethe.mov
-- :note: E1
+- :note: A0
   :file: kissing.mov
-- :note: F1
+# Exit Tone
+- :note: C3
+  :file: exit.mov
+- :note: D3
+  :file: exit_2.mov
+- :note: E3
+  :file: exit_3.mov
+# Zishethe
+- :note: G3
+  :file: zishethe.mov
+- :note: A3
+  :file: zishethe_2.mov
+# PM Sink
+- :note: C4
+  :file: sink.mov
+# Pressure
+- :note: G4
+  :file: pressure.mov
+# Purple
+- :note: C5
   :file: purple.mov
-- :note: G1
+# Gloves
+- :note: G5
   :file: gloves.mov
+# Wasted
+- :note: C6
+  :file: wasted.mov
