@@ -24,16 +24,9 @@ module Liveset
     def configure_clips
       @clips.each do |clip|
         note(clip[:note]) do
-          begin
-            puts "Note #{clip[:note]} received, playing #{clip[:file]}"
-            play(video(clip[:file]))
-          rescue Exception => exception
-            puts
-            puts "** Exception **"
-            puts
-            p exception
-            puts
-          end
+          puts "Note #{clip[:note]} received, playing #{clip[:file]}"
+          vid = video(clip[:file])
+          play(vid)
         end
       end
     end
