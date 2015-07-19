@@ -5,6 +5,7 @@ module Liveset
     attr_reader :settings
 
     def initialize(configuration, &block)
+      puts "Starting video player"
       @settings = configuration.vidplayer[:settings]
       populate_player
       instance_eval(&block) if block_given?
@@ -19,6 +20,12 @@ module Liveset
     end
 
     private
+
+    def populate_player_report(inputs, flags)
+      puts "Using MIDI inputs:"
+      inputs.each_with_index { |input, i| puts "#{i+1}. #{input.name}" }
+      puts "Using MPlayer flags `#{flags}`"
+    end
 
     def method_missing(method, *args, &block)
       if @player.respond_to?(method)
@@ -37,11 +44,17 @@ module Liveset
         num_inputs = match[2] || 1
         inputs = (0..num_inputs.to_i - 1).to_a.map { UniMIDI::Input.gets }
         inputs ||= @settings[:midi][:input]
+      else @settings[:midi][:input].match(/\Aall\z/)
+        UniMIDI::Input.all.map(&:open)
       end
     end
 
     def populate_player
-      @player = MMPlayer.new(get_midi_inputs, :mplayer_flags => get_mplayer_flags)
+      flags = get_mplayer_flags
+      inputs = get_midi_inputs
+      populate_player_report(inputs, flags)
+      puts "Starting MPlayer"
+      @player = MMPlayer.new(inputs, :mplayer_flags => flags)
     end
 
     def get_mplayer_flags
