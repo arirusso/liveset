@@ -1,5 +1,5 @@
 windows:
-  - name: startup_right
+  - name: liveset_right
     root: ~/workspace/liveset
     layout: tiled
     panes:
