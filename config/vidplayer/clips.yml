@@ -10,6 +10,16 @@
   :file: swipe.mov
 - :note: A0
   :file: kissing.mov
+- :note: A1
+  :file: bird.mov
+- :note: B1
+  :file: cavy.mov
+- :note: C2
+  :file: dance.mov
+- :note: D2
+  :file: meatball.mov
+- :note: E2
+  :file: tail.mov
 # Exit Tone
 - :note: C3
   :file: exit.mov
