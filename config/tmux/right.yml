@@ -8,6 +8,4 @@ windows:
       - script/vz/hub
       - commands:
          - script/ableton/start
-         - sleep 1
-         - script/ableton/start
         focus: true
