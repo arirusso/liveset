@@ -7,5 +7,7 @@ windows:
       - script/vz/server
       - script/vz/hub
       - commands:
-         - echo hi
+         - script/ableton/start
+         - sleep 1
+         - script/ableton/start
         focus: true
