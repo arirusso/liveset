@@ -20,12 +20,17 @@
   :file: dance.mov
 - :note: D2
   :file: meatball.mov
-- :note: E2
-  :file: tail.mov
 - :note: F2
   :file: fern.mov
 - :note: G2
   :file: dollar.mov
+# Tail
+- :note: A2
+  :file: tail.mov
+- :note: A#2
+  :file: tail_2.mov
+- :note: B2
+  :file: tail_3.mov
 # Exit Tone
 - :note: C3
   :file: exit.mov
