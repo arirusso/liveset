@@ -4,6 +4,7 @@ windows:
     layout: tiled
     panes:
       - script/vidplayer/listen
+      - script/vidplayer/trigger
       - commands:
          - echo hi
         focus: true
