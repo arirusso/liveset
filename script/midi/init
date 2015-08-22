@@ -3,9 +3,9 @@ $:.unshift(File.join("..", "lib"))
 
 require "micromidi"
 
-@output = UniMIDI::Output.gets
+@outputs = UniMIDI::Output.all.map(&:open)
 
-MIDI.using(@output) do
+MIDI.using(@outputs) do
 
   # Initialize the Pittsburgh MIDI 2
 
