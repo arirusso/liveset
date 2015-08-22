@@ -3,7 +3,7 @@ windows:
     root: ~/workspace/liveset
     layout: tiled
     panes:
-      - script/vidplayer
+      - script/vidplayer/listen
       - commands:
          - echo hi
         focus: true
