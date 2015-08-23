@@ -6,5 +6,6 @@ windows:
       - script/vidplayer/listen
       - script/vidplayer/trigger
       - commands:
+         - script/caffeinate
          - echo hi
         focus: true

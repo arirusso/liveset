@@ -7,5 +7,6 @@ windows:
       - script/vz/server
       - script/vz/hub
       - commands:
+         - script/caffeinate
          - script/ableton/start
         focus: true
