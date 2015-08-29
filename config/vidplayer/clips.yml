@@ -1,7 +1,5 @@
 - :note: C0
   :file: spider.mov
-- :note: D0
-  :file: skeleton.mov
 - :note: E0
   :file: loop.mov
 - :note: F0
@@ -12,8 +10,6 @@
   :file: kissing.mov
 - :note: B0
   :file: kissing_comp.mov
-- :note: A1
-  :file: bird.mov
 - :note: B1
   :file: cavy.mov
 - :note: C2
@@ -84,6 +80,13 @@
   :file: wasted.mov
 - :note: D6
   :file: wasted_2.mov
+# Bird
+- :note: E6
+  :file: bird.mov
+- :note: F6
+  :file: bird_2.mov
+- :note: F#6
+  :file: bird_3.mov
 # Aqua
 - :note: G6
   :file: deep_vitae.mov
