@@ -12,8 +12,6 @@
   :file: kissing_comp.mov
 - :note: B1
   :file: cavy.mov
-- :note: C2
-  :file: dance.mov
 - :note: D2
   :file: meatball.mov
 - :note: F2
@@ -101,3 +99,8 @@
   :file: skeleton.mov
 - :note: D7
   :file: skeleton_2.mov
+# Dance
+- :note: E7
+  :file: dance.mov
+- :note: F7
+  :file: dance_2.mov
