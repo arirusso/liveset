@@ -58,7 +58,7 @@ module Liveset
     end
 
     def get_mplayer_flags
-      flags = "-framedrop -zoom -osdlevel 0 -nosound"
+      flags = "-framedrop -zoom -osdlevel 0 -nosound -fixed-vo"
       flags += " -fs" if @settings[:video][:is_fullscreen]
       flags
     end
