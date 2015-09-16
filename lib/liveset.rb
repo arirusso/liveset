@@ -1,4 +1,3 @@
-require "cocoa"
 require "mmplayer"
 require "yaml"
 
