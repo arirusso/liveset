@@ -5,7 +5,7 @@ module Liveset
     attr_reader :displays
 
     def initialize
-      populate_displays
+      #populate_displays
     end
 
     private

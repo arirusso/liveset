@@ -4,4 +4,4 @@
 :video:
   :directory: assets/video/nosound/hifi
   :display: 0
-  :is_fullscreen: false
+  :is_fullscreen: true
