@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -avzh --progress --copy-links . /Volumes/vidplayer/liveset
+rsync -ahptv --progress --copy-links . /Volumes/vidplayer/liveset
