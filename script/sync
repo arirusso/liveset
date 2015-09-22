@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -ahptv --progress --copy-links . /Volumes/vidplayer/liveset
+rsync -ahtv --progress --copy-links --no-perms --no-owner --no-group . /Volumes/vidplayer/liveset
