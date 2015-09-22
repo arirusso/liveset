@@ -10,7 +10,7 @@
           :scale: !ruby/range 0.1..10.0
           :value: 3
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 0
 
       - :name: Mesh Opacity
@@ -19,7 +19,7 @@
           :scale: !ruby/range 0..1.0
           :value: 1
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 1
 
       - :name: Grid Opacity
@@ -28,7 +28,7 @@
           :scale: !ruby/range 0..0.3
           :value: 0.1
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 2
 
       - :name: Contrast
@@ -37,7 +37,7 @@
           :scale: !ruby/range 0.5..5.0
           :value: 3
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 3
 
       - :name: Z Depth
@@ -46,7 +46,7 @@
           :scale: !ruby/range 0..1000
           :value: 400
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 4
 
       - :name: Noise Strength
@@ -55,7 +55,7 @@
           :scale: !ruby/range 0..600
           :value: 200
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 5
 
       - :name: Noise Speed
@@ -64,7 +64,7 @@
           :scale: !ruby/range 0..0.05
           :value: 0.01
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 6
 
       - :name: Noise Scale
@@ -73,39 +73,8 @@
           :scale: !ruby/range 0..0.1
           :value: 0.01
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 7
-
-      - :name: Invert Z
-        :key: invertZ
-        :default:
-          :value: false
-        :osc:
-          :address: /1/toggleA_1
-
-      - :name: Spin X
-        :key: spin_x
-        :default:
-          :scale: !ruby/range 0..100
-        :osc:
-          :address: /multifaderM/1
-          :scale: !ruby/range 0..1.0
-
-      - :name: Spin Y
-        :key: spin_y
-        :default:
-          :scale: !ruby/range 0..100
-        :osc:
-          :address: /multifaderM/2
-          :scale: !ruby/range 0..1.0
-
-      - :name: Spin Speed
-        :key: spinSpeed
-        :default:
-          :scale: !ruby/range 0..0.002
-        :osc:
-          :address: /multifaderM/3
-          :scale: !ruby/range 0..1.0
 
       - :name: Hue
         :key: hue
@@ -113,37 +82,8 @@
           :scale: !ruby/range 0..359
           :value: 0
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 8
-
-      - :name: Saturation
-        :key: saturation
-        :default:
-          :scale: !ruby/range 1.0..10
-          :value: 1
-        :midi:
-          :channel: 2
-          :index: 12
-
-      - :name: Key Color
-        :key: keyColor
-        :default:
-          :scale: !ruby/range 0..16777215
-          :value: 1
-        :midi:
-          :channel: 2
-          :index: 13
-
-      - :name: Toggle Keyer
-        :key: toggleKeyer
-        :midi:
-          :channel: 2
-          :index: 14
-
-      - :name: Reset Rotation
-        :key: resetRotation
-        :osc:
-          :address: /encoderM
 
       - :name: Audio Amount
         :key: audioAmount
@@ -151,7 +91,7 @@
           :scale: !ruby/range 0..100
           :value: 100
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 9
 
       - :name: BG Zoom
@@ -160,7 +100,7 @@
           :scale: !ruby/range 0.1..10.0
           :value: 3
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 10
 
       - :name: BG Playback Rate
@@ -169,8 +109,29 @@
           :scale: !ruby/range 0.01..2.0
           :value: 1
         :midi:
-          :channel: 2
+          :channel: 4
           :index: 11
 
-      - :name: Hue Rotation
-        :key: hueRotation
+      - :name: Saturation
+        :key: saturation
+        :default:
+          :scale: !ruby/range 1.0..10
+          :value: 1
+        :midi:
+          :channel: 4
+          :index: 12
+
+      - :name: Key Color
+        :key: keyColor
+        :default:
+          :scale: !ruby/range 0..16777215
+          :value: 1
+        :midi:
+          :channel: 4
+          :index: 13
+
+      - :name: Toggle Keyer
+        :key: toggleKeyer
+        :midi:
+          :channel: 4
+          :index: 14
