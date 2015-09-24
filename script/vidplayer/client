@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+$:.unshift(File.join("lib"))
+
+require "liveset"
+require "micromidi"
+
+MESSAGES = [
+  {
+    :function => "Reset",
+    :note => "F9"
+  },
+  {
+    :function => "Shutdown",
+    :note => "F#9"
+  },
+  {
+    :function => "Reboot",
+    :note => "G9"
+  }
+]
+
+@outputs = UniMIDI::Output.all.map(&:open)
+
+@config = Liveset::Configuration.new
+@clips = @config.vidplayer[:clips].freeze
+@channel = @config.vidplayer[:settings][:midi][:channel].freeze
+
+loop do
+  @clips.each_with_index do |action, i|
+    name = action[:file]
+    puts "#{i+1}. #{name}"
+  end
+  alpha = ("a".."z")
+  MESSAGES.each_with_index do |action, i|
+    name = action[:function]
+    index = alpha.to_a[i]
+    puts "#{index}. * #{name}"
+  end
+  print "> "
+  choice = gets
+  unless (index = choice.chomp).nil?
+    action = if index.match(/\d+/)
+      @clips[index.to_i]
+    else
+      message_index = alpha.to_a.index(index)
+      MESSAGES[message_index]
+    end
+    unless action.nil?
+      note = action[:note]
+      if (name = action[:file])
+        type = "clip"
+      else
+        name = action[:function]
+        type = "function"
+      end
+      puts "Sending note #{note} for #{type} #{name}"
+      message = MIDIMessage::NoteOn[note].new(@channel, 100)
+      @outputs.each { |output| output.puts(*message.to_a) }
+    end
+  end
+end
