@@ -22,21 +22,26 @@ module Liveset
       configure_system_controls
     end
 
+    def stop_player
+      @player.player.player.quit unless @player.player.nil? || @player.player.player.nil?
+      true
+    end
+
     def configure_system_controls
       note("F9") do
         puts "Note F9 received, resetting program"
-        @player.stop
+        stop_player
         cmd_line = "#{$0} #{ARGV.join( ' ' )}"
         Kernel.exec(cmd_line)
       end
       note("F#9") do
         puts "Note F#9 received, shutting down"
-        @player.stop
+        stop_player
         Kernel.exec("sudo shutdown now")
       end
       note("G9") do
         puts "Note G9 received, rebooting"
-        @player.stop
+        stop_player
         Kernel.exec("sudo reboot")
       end
     end

@@ -2,17 +2,16 @@ module Liveset
 
   class VideoPlayer
 
+    extend Forwardable
+
     attr_reader :settings
+    def_delegators :@player, :start, :stop
 
     def initialize(configuration, &block)
       puts "Starting video player"
       @settings = configuration.vidplayer[:settings]
       populate_player
       instance_eval(&block) if block_given?
-    end
-
-    def start
-      @player.start
     end
 
     def video(file)
