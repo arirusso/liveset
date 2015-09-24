@@ -24,17 +24,28 @@ MESSAGES = [
 @config = Liveset::Configuration.new
 @clips = @config.vidplayer[:clips].freeze
 @channel = @config.vidplayer[:settings][:midi][:channel].freeze
-actions = @clips + MESSAGES
 
 loop do
-  actions.each_with_index do |action, i|
-    name = action[:file] || action[:function]
+  @clips.each_with_index do |action, i|
+    name = action[:file]
     puts "#{i+1}. #{name}"
+  end
+  alpha = ("a".."z")
+  MESSAGES.each_with_index do |action, i|
+    name = action[:function]
+    index = alpha.to_a[i]
+    puts "#{index}. * #{name}"
   end
   print "> "
   choice = gets
-  unless (index = choice.chomp.to_i - 1) == -1
-    unless (action = actions[index]).nil?
+  unless (index = choice.chomp).nil?
+    action = if index.match(/\d+/)
+      @clips[index.to_i]
+    else
+      message_index = alpha.to_a.index(index)
+      MESSAGES[message_index]
+    end
+    unless action.nil?
       note = action[:note]
       if (name = action[:file])
         type = "clip"
@@ -44,7 +55,7 @@ loop do
       end
       puts "Sending note #{note} for #{type} #{name}"
       message = MIDIMessage::NoteOn[note].new(@channel, 100)
-      @output.each { |output| output.puts(*message.to_a) }
+      @outputs.each { |output| output.puts(*message.to_a) }
     end
   end
 end
