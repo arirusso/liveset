@@ -4,6 +4,7 @@ windows:
     layout: tiled
     panes:
       - script/midi/init
+      - script/vidplayer/client
       - script/vz/server
       - script/vz/hub
       - commands:
