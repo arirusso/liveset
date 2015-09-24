@@ -40,8 +40,8 @@ loop do
   choice = gets
   unless (index = choice.chomp).nil?
     action = if index.match(/\d+/)
-      @clips[index.to_i]
-    else
+      @clips[index.to_i - 1]
+    elsif index.match(/[a-zA-Z]+/)
       message_index = alpha.to_a.index(index)
       MESSAGES[message_index]
     end
