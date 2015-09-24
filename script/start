@@ -1,3 +1,3 @@
 #!/bin/sh
-tmux new -d -s my-session 'teamocil --layout config/tmux/right.yml'\; \
+tmux new -d -s my-session 'teamocil --layout config/tmux/layout.yml'\; \
  attach \;
