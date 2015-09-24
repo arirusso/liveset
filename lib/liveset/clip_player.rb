@@ -25,15 +25,18 @@ module Liveset
     def configure_system_controls
       note("F9") do
         puts "Note F9 received, resetting program"
+        @player.stop
         cmd_line = "#{$0} #{ARGV.join( ' ' )}"
         Kernel.exec(cmd_line)
       end
       note("F#9") do
         puts "Note F#9 received, shutting down"
+        @player.stop
         Kernel.exec("sudo shutdown now")
       end
       note("G9") do
         puts "Note G9 received, rebooting"
+        @player.stop
         Kernel.exec("sudo reboot")
       end
     end
