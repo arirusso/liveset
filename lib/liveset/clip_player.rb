@@ -19,6 +19,23 @@ module Liveset
 
       configure_clips
       configure_speed_control
+      configure_system_controls
+    end
+
+    def configure_system_controls
+      note("F9") do
+        puts "Note F9 received, resetting program"
+        cmd_line = "#{$0} #{ARGV.join( ' ' )}"
+        Kernel.exec(cmd_line)
+      end
+      note("F#9") do
+        puts "Note F#9 received, shutting down"
+        Kernel.exec("sudo shutdown now")
+      end
+      note("G9") do
+        puts "Note G9 received, rebooting"
+        Kernel.exec("sudo reboot")
+      end
     end
 
     def configure_clips
