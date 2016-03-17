@@ -1,10 +1,8 @@
 windows:
-  - name: liveset_right
+  - name: liveset1
     root: ~/workspace/liveset
     layout: tiled
     panes:
-      - script/midi/init
-      - script/vidplayer/client
       - script/vz/server
       - script/vz/hub
       - commands:
