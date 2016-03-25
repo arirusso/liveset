@@ -84,11 +84,11 @@
           :index: 7
           :scale: !ruby/range 1..127
 
-      - :name: Toggle Keyer
-        :key: toggleKeyer
-        :midi:
-          :channel: 4
-          :index: 8
+      #- :name: Toggle Keyer
+      #  :key: toggleKeyer
+      #  :midi:
+      #    :channel: 4
+      #    :index: 8
 
       - :name: Mesh Opacity
         :key: mOpac
