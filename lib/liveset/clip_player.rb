@@ -9,6 +9,7 @@ module Liveset
     def initialize(configuration, &block)
       @clips = configuration.vidplayer[:clips]
       @player = VideoPlayer.new(configuration)
+      @clip = nil
       configure
     end
 
@@ -18,7 +19,7 @@ module Liveset
       receive_channel(settings[:midi][:channel])
 
       configure_clips
-      configure_speed_control
+      #configure_speed_control
       configure_system_controls
     end
 
@@ -48,20 +49,23 @@ module Liveset
 
     def configure_clips
       @clips.each do |clip|
-        note(clip[:note]) do
-          puts "Note #{clip[:note]} received, playing #{clip[:file]}"
-          vid = video(clip[:file])
-          play(vid)
+        cc(clip[:cc]) do |value|
+          play_clip(clip) if @clip != clip
+          set_position(value)
         end
       end
     end
 
-    def configure_speed_control
-      cc(1) do |value|
-        percent = to_percent(value)
-        setting = [(percent / 100.0) * 2, 0.1].max
-        speed(setting, :set)
-      end
+    def play_clip(clip)
+      puts "CC #{clip[:cc]} received, playing #{clip[:file]}"
+      vid = video(clip[:file])
+      play(vid)
+      @clip = clip
+    end
+
+    def set_position(value)
+      percent = to_percent(value)
+      seek(percent, :percent)
     end
 
     def method_missing(method, *args, &block)
