@@ -1,7 +1,0 @@
-:midi:
-  :channel: 15
-  :input: all
-:video:
-  :directory: assets/video/nosound/hifi
-  :display: 0
-  :is_fullscreen: true

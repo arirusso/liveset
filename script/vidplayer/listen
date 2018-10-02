@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-$:.unshift(File.join("lib"))
-
-require "liveset"
-
-@config = Liveset::Configuration.new
-@player = Liveset::ClipPlayer.new(@config)
-
-@player.start #(:background => true)
