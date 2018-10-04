@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require "unimidi"
+
+output = UniMIDI::Output.gets
+
+output.puts(0xB0, 0x7C, 0)
+output.puts(0xB0, 0x7F, 0)
