@@ -1,7 +1,7 @@
 :midi:
-  :channel: 15
+  :channel: 2
   :input: all
 :video:
-  :directory: assets/video/nosound/hifi
+  :directory: assets/video/2018/wl
   :display: 0
-  :is_fullscreen: true
+  :is_fullscreen: false
