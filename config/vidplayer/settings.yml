@@ -4,4 +4,4 @@
 :video:
   :directory: /media/russo/DEE/wl
   :display: 0
-  :is_fullscreen: false
+  :is_fullscreen: true
