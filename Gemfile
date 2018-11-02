@@ -13,6 +13,6 @@ gem "patch", "~> 0.4", ">= 0.4.14"
 gem "teamocil", "~> 1", ">= 1.2"
 
 #vz
-gem "ruby-filemagic", "~> 0.6", ">= 0.6.3"
+#gem "ruby-filemagic", "~> 0.6", ">= 0.6.3"
 gem "rack", "~> 1.6", ">= 1.6.1"
 gem "thin", "~> 1.6", ">= 1.6.3"
