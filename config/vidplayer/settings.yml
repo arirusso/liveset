@@ -2,6 +2,6 @@
   :channel: 2
   :input: all
 :video:
-  :directory: /media/russo/DEE/wl
+  :directory: /media/vidplayer/DEE/wl
   :display: 0
   :is_fullscreen: true
