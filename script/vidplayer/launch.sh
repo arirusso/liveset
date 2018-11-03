@@ -2,7 +2,7 @@
 
 #
 # Add to Startup Application Preferences:
-# gnome-terminal --profile=dev -e /home/vidplayer/liveset/script/vidplayer/launch.sh
+# gnome-terminal --profile=dev -e /home/vidplayer/workspace/liveset/script/vidplayer/launch.sh
 #
 
 cd workspace/liveset
